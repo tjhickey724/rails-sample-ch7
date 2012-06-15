@@ -1,0 +1,17 @@
+rails new rails_ch7
+rails generate controller Users new --no-test-framework
+rails generate model User name:string email:string
+bundle exec rake db:migrate
+# add gem 'annotate', '~> 2.4.1.beta' to the Gemfile
+bundle install
+bundle exec annotate --position before
+# add validation to the user model as in Listing 6.17
+rails generate migration add_index_to_users_email
+# update the migration using Listing 6.22
+bundle exec rake db:migrate
+# add bcrypt-ruby and bootstrap-css gems to the Gemfile
+bundle install
+rails generate migration add_password_digest_to_users password_digest:string
+bundle exec rake db:migrate
+# add :password and :password_confirmation to user.rb with validation
+# add has_secure_password method to user.rb as in Listing 6.30
