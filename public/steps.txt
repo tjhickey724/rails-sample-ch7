@@ -15,3 +15,15 @@ rails generate migration add_password_digest_to_users password_digest:string
 bundle exec rake db:migrate
 # add :password and :password_confirmation to user.rb with validation
 # add has_secure_password method to user.rb as in Listing 6.30
+# modified application.html.erb to include debug(params) as in Listing 7.1
+# also added a header and footer partial
+
+#Chapter 7
+# modified config/routes.rb by adding 'resources :users'
+# modified views/users/new.html.erb by adding a form_for tag
+# modified controllers/user_controller.rb by adding @user= User.new
+# added create method to user_controller.rb
+# added shared/_error_messages.html.erb in Listing 7.23
+# added render of error message in users/new.html.erb 
+# added flash display code to the layout file
+# added a flash to the user#create controller
